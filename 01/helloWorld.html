@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Hello Angular JS</title>
+</head>
+<body ng-app>
+
+<input type="text"
+       ng-model="name"
+       placeholder="Enter Your Name"
+/>
+<h1>Hello {{name}}</h1>
+<h1>Hello <span ng-bind="name"></span></h1>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript"></script>
+</body>
+</html>
