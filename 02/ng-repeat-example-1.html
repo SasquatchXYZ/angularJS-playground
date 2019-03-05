@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="notesApp">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Hello AngularJS</title>
+</head>
+<body ng-controller="MainCtrl as ctrl">
+
+<div ng-repeat="note in ctrl.notes">
+  <span class="label">{{note.label}}</span>
+  <span class="status" ng-bind="note.done"></span>
+</div>
+
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+  angular.module('notesApp', [])
+    .controller('MainCtrl', [function () {
+
+      const self = this;
+      self.notes = [
+        {id: 1, label: 'First Note', done: false},
+        {id: 2, label: 'Second Note', done: false},
+        {id: 3, label: 'Third Note', done: false},
+        {id: 4, label: 'Fourth Note', done: false},
+        {id: 5, label: 'Fifth Note', done: false},
+      ]
+    }])
+
+</script>
+</body>
+</html>
