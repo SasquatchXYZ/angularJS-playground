@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="notesApp">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>$http Get Example</title>
+
+  <style>
+    .item {
+      padding: 10px;
+    }
+  </style>
+
+</head>
+<body ng-controller="MainCtrl as mainCtrl">
+
+<h1>Hello Servers!</h1>
+
+<div ng-repeat="todo in mainCtrl.items" class="item">
+  <div><span ng-bind="todo.label"></span></div>
+  <div>- by <span ng-bind="todo.author"></span></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+<script>
+
+  angular.module('notesApp', [])
+    .controller('MainCtrl', ['$http', function ($http) {
+      const self = this;
+      self.items = [];
+
+      $http.get('/api/note').then(res => {
+        self.items = res.data
+      }, err => console.error('Error while fetching notes'))
+    }])
+
+</script>
+
+</body>
+</html>
