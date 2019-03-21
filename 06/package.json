@@ -1,0 +1,27 @@
+{
+  "name": "06",
+  "version": "1.0.0",
+  "description": "Server for Chapter 06",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "angularjs",
+    "nodejs",
+    "express"
+  ],
+  "author": "Dalton Ricker",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1"
+  }
+}
