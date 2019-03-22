@@ -79,6 +79,12 @@ router.post('/note/:id', (req, res) => {
 
 });
 
+router.post('/login', (req, res) => {
+  console.log(req.body);
+  console.log(`API LOGIN FOR ${req.body}`);
+  res.send({msg: `Login successful for ${req.body.username}`})
+});
+
 app.use('/api', router);
 
 app.listen(PORT);
