@@ -36,10 +36,10 @@ router.post('/note', (req, res) => {
 });
 
 router.post('/note/:id/done', (req, res) => {
-  const noteId = req.params.id;
+  const noteId = parseInt(req.params.id);
 
   const selectedNote = notes.find((note) => {
-    return note.id === noteId
+    return note.id === noteId;
   });
 
   selectedNote.label = `Done - ${selectedNote.label}`;
