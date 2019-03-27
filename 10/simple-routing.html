@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>AngularJS Simple Routing</title>
+
+  <script src="../angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.js" integrity="sha256-AL1+LnGW9wl5bbvR2aXuGAmYsPKLYHzFbeRyHvPUHw8=" crossorigin="anonymous"></script>
+
+</head>
+<body ng-app="routingApp">
+
+<h2>AngularJS Routing Application</h2>
+
+<ul>
+  <li><a href="#/">Default Route</a></li>
+  <li><a href="#/second">Second Route</a></li>
+  <li><a href="#/asdasdasd">Nonexistent Route</a></li>
+</ul>
+
+<div ng-view></div>
+
+<script type="text/javascript">
+
+  angular.module('routingApp', ['ngRoute'])
+    .config(['$routeProvider', function ($routeProvider) {
+
+      $routeProvider.when('/', {
+        template: '<h5>This is the default route</h5>'
+      })
+        .when('/second', {
+          template: '<h5>This is the second route</h5>'
+        })
+        .otherwise({redirectTo: '/'})
+
+    }])
+
+</script>
+</body>
+</html>
