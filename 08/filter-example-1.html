@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="filtersApp">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Filters in Action 1</title>
+
+</head>
+<body ng-controller="FilterCtrl as ctrl">
+
+<h1>Filters Example 1</h1>
+
+<div>
+  <div>
+    Amount as a number: {{ctrl.amount | number}}
+  </div>
+  <div>
+    Total Cost as a Currency: {{ctrl.totalCost | currency}}
+  </div>
+  <div>
+    Total Cost in INR: {{ctrl.totalCost | currency: 'INR '}}
+  </div>
+  <div>
+    Shouting the name: {{ctrl.name | uppercase}}
+  </div>
+  <div>
+    Whispering the name: {{ctrl.name | lowercase}}
+  </div>
+  <div>
+    Start Time: {{ctrl.startTime | date: 'medium'}}
+  </div>
+</div>
+
+<script src="../angular.min.js"></script>
+
+<script type="text/javascript">
+
+  angular.module('filtersApp', [])
+    .controller('FilterCtrl', [function () {
+      this.amount = 1024;
+      this.totalCost = 4906;
+      this.name = 'Dalton Ricker';
+      this.startTime = new Date().getTime()
+    }])
+
+</script>
+</body>
+</html>

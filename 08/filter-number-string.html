@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Filters in Action 2</title>
+
+</head>
+<body ng-app="filtersApp">
+
+<h1>Filters with Strings and Numbers</h1>
+
+<ul ng-controller="FilterCtrl as ctrl">
+  <li>
+    Amount - {{ctrl.amount}}
+  </li>
+  <li>
+    Amount - Default Currency: {{ctrl.amount | currency}}
+  </li>
+  <li>
+    <!--  Using the English Pound Sign  -->
+    Amount - INR Currency: {{ctrl.amount | currency: '&#163'}}
+  </li>
+
+  <li>
+    Amount - Number: {{ctrl.amount | number}}
+  </li>
+  <li>
+    Amount - No. with 4 decimals: {{ctrl.amount | number: 4}}
+  </li>
+
+  <li>
+    Name with no filters: {{ctrl.name}}
+  </li>
+  <li>
+    Name - lowercase filter: {{ctrl.name | lowercase}}
+  </li>
+  <li>
+    Name - uppercase filter: {{ctrl.name | uppercase}}
+  </li>
+
+  <li>
+    The JSON filter: {{ctrl.obj | json}}
+  </li>
+
+  <li>
+    Timestamp: {{ctrl.startTime}}
+  </li>
+  <li>
+    Default Date filter: {{ctrl.startTime | date}}
+  </li>
+  <li>
+    Medium Date filter: {{ctrl.startTime | date: 'medium'}}
+  </li>
+  <li>
+    Custom Date filter: {{ctrl.startTime | date: 'dd MMM yyyy'}}
+  </li>
+</ul>
+
+<script src="../angular.min.js"></script>
+
+<script type="text/javascript">
+
+  angular.module('filtersApp', [])
+    .controller('FilterCtrl', [function () {
+      this.amount = 1024;
+      this.name = 'Dalton Ricker';
+      this.obj = {test: 'value', num: 123};
+      this.startTime = new Date().getTime()
+    }])
+
+</script>
+</body>
+</html>
