@@ -2,7 +2,7 @@ angular.module('fifaApp', ['ngRoute'])
   .config($routeProvider => {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/team_details.html',
+        templateUrl: 'views/team_list.html',
         controller: 'TeamListCtrl as teamListCtrl'
       })
       .when('/login', {

@@ -95,7 +95,7 @@ FIFA.TEAM_DETAILS = {
     headCoach: 'Óscar Tabárez',
     captain: 'Diego Lugano',
     flagUrl: 'http://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg',
-    logoUrl: 'http://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Uruguay_football_association.svg/195px-Uruguay_football_association.svg.png'
+    logoUrl: 'https://upload.wikimedia.org/wikipedia/en/4/43/Uruguay_national_football_team_seal.svg'
   }
 };
 

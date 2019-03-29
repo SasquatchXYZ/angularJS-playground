@@ -30,12 +30,14 @@ app.use(cookieParser());
 
 app.use(session({
   secret: 'almvnirtgd#$DFsa25452*AYD*D*S!@!#adsda))Ddsadsax',
+  resave: false,
+  saveUninitialized: true,
   cookie: {httpOnly: true, secure: false, maxAge: 86400000},
-  store: new session.MemoryStore()
+  store: new session.MemoryStore(),
 }));
 
 app.use(passport.initialize());
-app.use(session());
+app.use(passport.session());
 
 passport.use(new LocalStrategy((username, password, done) => {
   if (USER.username === username) {
@@ -55,13 +57,14 @@ const isLoggedIn = (req, res, next) => {
   if (req.isAuthenticated()) {
     next()
   } else {
-    res.send({
+    res.status(400).send({
       msg: 'Please login to access this information'
-    }, 400)
+    })
   }
 };
 
 app.get('/api/team', (req, res) => {
+  console.log('fetching teams');
   res.send(FIFA.TEAMS_LIST)
 });
 
@@ -90,7 +93,7 @@ app.get('/api/team/:code', isLoggedIn, (req, res) => {
 
 app.get('/api/logout', (req, res) => {
   req.logout();
-  res.redirect('/#!/login')
+  res.redirect('/#/login')
 });
 
 const PORT = process.env.PORT || 8000;
