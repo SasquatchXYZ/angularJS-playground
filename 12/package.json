@@ -1,0 +1,20 @@
+{
+  "name": "12",
+  "version": "1.0.0",
+  "description": "Directive Unit Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "keywords": [
+    "karma",
+    "angularjs"
+  ],
+  "author": "Dalton Ricker",
+  "license": "ISC",
+  "dependencies": {
+    "karma": "^4.0.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1"
+  }
+}
