@@ -1,7 +1,7 @@
 angular.module('stockMarketApp', [])
   .directive('stockWidget', [function () {
     return {
-      templateURL: 'stock.html',
+      templateUrl: 'stock.html',
       restrict: 'A',
       scope: {
         stockData: '=',
