@@ -6,7 +6,5 @@ angular.module('sliderApp', [])
 
     self.textValue = 4000;
 
-    self.setSelectedValue = function () {
-      self.selectedValue = self.textValue
-    }
+    self.setSelectedValue = () => self.selectedValue = self.textValue
   }]);
