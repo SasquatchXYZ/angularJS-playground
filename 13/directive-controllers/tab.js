@@ -1,8 +1,8 @@
 angular.module('stockMarketApp')
-  .directive('simpleStockRepeat', [function () {
+  .directive('tab', [function () {
     return {
-      restrict: 'A',
-      transclude: 'true',
+      restrict: 'E',
+      transclude: true,
       template: '<div ng-show="selected" ng-transclude></div>',
       require: '^tabs',
       scope: true,
