@@ -6,7 +6,7 @@ angular.module('stockMarketApp')
       template: '<div ng-show="selected" ng-transclude></div>',
       require: '^tabs',
       scope: true,
-      link: function ($scope, $element, $attr, tabCtrl) {
+      link: ($scope, $element, $attr, tabCtrl) => {
         tabCtrl.registerTab($attr.title, $scope)
       }
     }
