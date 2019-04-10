@@ -1,3 +1,4 @@
+// Refactored for ES6... but without string literals
 angular.module('dynamicFormApp')
   .directive('formElement', [function () {
 
@@ -5,18 +6,18 @@ angular.module('dynamicFormApp')
       restrict: 'E',
       require: '^form',
       scope: true,
-      compile: function ($element, $attrs) {
+      compile: ($element, $attrs) => {
         const expectedInputAttrs = {
           'required': 'required',
-          'ng-minlength': 'nmMinlength',
-          'ng-patter': 'ngPattern'
+          'ng-minlength': 'ngMinlength',
+          'ng-pattern': 'ngPattern'
           // More here to be implemented
         };
 
         // Start extracting content from HTML
-        let validationKeys = $element.find('validation');
-        let presentValidationKeys = {};
-        let inputName = $attrs.name;
+        const validationKeys = $element.find('validation');
+        const presentValidationKeys = {};
+        const inputName = $attrs.name;
         angular.forEach(validationKeys, (validationKey) => {
           validationKey = angular.element(validationKey);
           presentValidationKeys[validationKey.attr('key')] = validationKey.text()
@@ -42,11 +43,9 @@ angular.module('dynamicFormApp')
         elementHtml += '</div>';
         $element.html(elementHtml);
 
-        return function ($scope, $element, $attrs, formCtrl) {
+        return ($scope, $element, $attrs, formCtrl) => {
           $scope.validators = angular.copy(presentValidationKeys);
-          $scope.hasError = function (key) {
-            return !!formCtrl[inputName]['$error'][key]
-          }
+          $scope.hasError = key => !!formCtrl[inputName]['$error'][key]
         }
       }
     }
