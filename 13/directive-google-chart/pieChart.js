@@ -3,9 +3,12 @@ angular.module('googleChartApp')
     const convertToPieChartDataTableFormat = (firstColumnName, secondColumnName, data) => {
       const pieChartArray = [[firstColumnName, secondColumnName]];
 
-      for (let i = 0; i < data.length; i++) {
-        pieChartArray.push([data[i].label, data[i].value])
-      }
+      data.forEach(point => {
+        pieChartArray.push([point.label, point.value])
+      });
+      // for (let i = 0; i < data.length; i++) {
+      //   pieChartArray.push([data[i].label, data[i].value])
+      // }
       return google.visualization.arrayToDataTable(pieChartArray)
     };
 
