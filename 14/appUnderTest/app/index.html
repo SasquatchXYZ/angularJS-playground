@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>FIFA Teams</title>
+
+  <link rel="stylesheet" href="styles/bootstrap.css" type="text/css"/>
+  <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+
+</head>
+<body ng-app="fifaApp" class="landing">
+<div class="top-bar" ng-controller="MainCtrl as mainCtrl">
+  <div class="pull-left">
+    <span><a href="#!/">FIFA TEAMS</a></span>
+  </div>
+  <div class="pull-right">
+    <span class="login-link" ng-hide="mainCtrl.userService.isLoggedIn">
+      <a href="#!/login">Login</a>
+    </span>
+    <span class="logout-link" ng-show="mainCtrl.userService.isLoggedIn">
+      <!-- Server-side route, not a client-side route -->
+      <a href="/api/logout">Logout</a>
+    </span>
+  </div>
+</div>
+
+
+<div ng-view></div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">
+</script>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js">
+</script>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js">
+</script>
+
+<script src="scripts/app.js"></script>
+<script src="scripts/services.js"></script>
+<script src="scripts/controllers.js"></script>
+
+<!-- For versions later than 1.3 (current version 1.7 a hashbang (#!) must be used in place of a simple hash (#)
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-route.js"></script> -->
+</body>
+</html>

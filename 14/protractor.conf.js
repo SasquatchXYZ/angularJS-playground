@@ -1,6 +1,6 @@
 exports.config = {
   // The address of a running Selenium server
-  seleniumAddress: 'http://localhost:444/wd/hub',
+  seleniumAddress: 'http://localhost:4444/wd/hub',
 
   // The URL where the server we are testing is running
   baseUrl: 'http://localhost:8000/',
@@ -10,11 +10,12 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  // Spec patters are relative to the location of the spec file.  They may include glob patters.
+  // Spec patters are relative to the location of the spec file.
+  // They may include glob patterns.
   specs: ['*Spec*.js'],
 
   // Options to be passed to Jasmine-node
-  jasmineNOdeOpts: {
+  jasmineNodeOpts: {
     showColors: true // Use colors in the command-line report
   }
 };
