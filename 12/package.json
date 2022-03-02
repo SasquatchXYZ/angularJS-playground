@@ -13,7 +13,7 @@
   "author": "Dalton Ricker",
   "license": "ISC",
   "dependencies": {
-    "karma": "^4.0.1",
+    "karma": "^6.3.16",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^2.0.1"
   }
