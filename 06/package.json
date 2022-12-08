@@ -19,8 +19,8 @@
   "author": "Dalton Ricker",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "method-override": "^3.0.0",
     "morgan": "^1.9.1"
   }
